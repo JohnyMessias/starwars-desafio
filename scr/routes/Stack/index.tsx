@@ -7,12 +7,13 @@ import CharacterDetails from "../../screens/CharacterDetails"
 import CharacterList from "../../screens/CharacterList"
 import PlanetDetails from "../../screens/PlanetDetails"
 import PlanetList from "../../screens/PlanetsList"
+import { propsNavigationStack } from "./Models"
 
-const {Navigator, Screen } = createNativeStackNavigator()
+const {Navigator, Screen } = createNativeStackNavigator<propsNavigationStack>()
 
 export default function() {
     return(
-        <Navigator initialRouteName="Home">
+        <Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
             <Screen name="Login" component={Login} />
             <Screen name="Home" component={Home} />
             <Screen name="CharacterDetails" component={CharacterDetails} />
