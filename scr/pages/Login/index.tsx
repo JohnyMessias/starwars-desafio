@@ -75,14 +75,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerLogo:{
-        flex: 1,
+        flex: 3,
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
     },
     containerInputs:{
         backgroundColor:"#2600ffb5",
-        flex: 1,
+        flex: 2,
         paddingTop: 20,
         borderTopStartRadius: 25,
         borderTopEndRadius: 25,
@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     logo:{
-        width: 150,
-        height: 150,
+        width: 200,
+        height: 200,
         borderRadius: 100,
     },
     title:{
