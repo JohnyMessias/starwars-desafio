@@ -1,19 +1,19 @@
 import React from "react"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
-import Home from "../../screens/Home"
-import Login from "../../screens/Login"
-import CharacterDetails from "../../screens/CharacterDetails"
-import CharacterList from "../../screens/CharacterList"
-import PlanetDetails from "../../screens/PlanetDetails"
-import PlanetList from "../../screens/PlanetsList"
+import Home from "../../pages/Home"
+import Login from "../../pages/Login"
+import CharacterDetails from "../../pages/CharacterDetails"
+import CharacterList from "../../pages/CharacterList"
+import PlanetDetails from "../../pages/PlanetDetails"
+import PlanetList from "../../pages/PlanetsList"
 import { propsNavigationStack } from "./Models"
 
 const {Navigator, Screen } = createNativeStackNavigator<propsNavigationStack>()
 
 export default function() {
     return(
-        <Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
+        <Navigator initialRouteName="Login" screenOptions={{headerShown: false}}>
             <Screen name="Login" component={Login} />
             <Screen name="Home" component={Home} />
             <Screen name="CharacterDetails" component={CharacterDetails} />
