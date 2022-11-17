@@ -1,18 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, Text, SafeAreaView, StyleSheet, TextInput, TouchableOpacity, Alert, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native"
 import { propsStack } from "../../routes/Stack/Models";
 import * as Animatable from 'react-native-animatable'
 
-const image = "../../../assets/splash.png";
-const imageSW2 = { uri: "https://us.123rf.com/450wm/regioeligo/regioeligo1811/regioeligo181100004/115675483-vector-abstract-background-with-open-space-star-warp-or-hyperspace-travel-big-bang-illustration-.jpg?ver=6" };
-const imageSW = { uri: "https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png" };
-
 export default function Login() {
+    const image = "../../../assets/splash.png";
+    const imageSW2 = { uri: "https://us.123rf.com/450wm/regioeligo/regioeligo1811/regioeligo181100004/115675483-vector-abstract-background-with-open-space-star-warp-or-hyperspace-travel-big-bang-illustration-.jpg?ver=6" };
+    const imageSW = { uri: "https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png" };
+    const [user, setUser] = useState(null)
+    const [password, setPassword] = useState(null)
     const navigation = useNavigation<propsStack>()
+                    
+    function loginClick(){
+        if(user != null && password != null){
+            Alert.alert("Olá " + user)
+            navigation.navigate("Home")
+            setUser(null)
+            setPassword(null)
+        }
+        else{
+            Alert.alert("Campos vazios")
+        }
+        
+    }
+
     return (
         <ImageBackground source={imageSW2} resizeMode="cover" style={styles.container}>
-        <SafeAreaView style={styles.container}>
+          <SafeAreaView style={styles.container}>
             
             <View style={styles.containerLogo}>
                 <Animatable.Text 
@@ -31,23 +46,28 @@ export default function Login() {
                 style={styles.containerInputs}>
                 <TextInput 
                     style={styles.inputs}
+                    onChangeText={setUser}
+                    value={user}
                     keyboardType="email-address"
                     placeholder="Digite seu usuário" />
                 <TextInput 
                     style={styles.inputs} 
+                    onChangeText={setPassword}
+                    value={password}
                     secureTextEntry={true}
                     placeholder="Digite sua senha" />
                 <TouchableOpacity 
                     style={styles.button}
-                    onPress={() => navigation.navigate("Home")}>
+                    onPress={() => loginClick()}>
                     <Text style={styles.textButton}>Login</Text>
                 </TouchableOpacity>
             </Animatable.View>
-        </SafeAreaView>
+          </SafeAreaView>
         </ImageBackground>
         
     )
 }
+
 
 const styles = StyleSheet.create({
     container:{
