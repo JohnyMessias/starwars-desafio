@@ -14,7 +14,7 @@ export default function Login() {
                     
     function loginClick(){
         if(user != null && password != null){
-            Alert.alert("Olá " + user)
+            Alert.alert("Login realizado com sucesso", "Seja bem vindo(a)" + user)
             navigation.navigate("Home")
             setUser(null)
             setPassword(null)
@@ -23,6 +23,10 @@ export default function Login() {
             Alert.alert("Campos vazios")
         }
         
+    }
+
+    function registerClick(){
+        Alert.alert("Clicou em Registrar-se", "Logo será possível se registrar, obrigado")
     }
 
     return (
@@ -60,6 +64,11 @@ export default function Login() {
                     style={styles.button}
                     onPress={() => loginClick()}>
                     <Text style={styles.textButton}>Login</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    style={styles.register}
+                    onPress={() => registerClick()}>
+                    <Text style={styles.textRegister}>Não possui um conta? Cadastre-se</Text>
                 </TouchableOpacity>
             </Animatable.View>
           </SafeAreaView>
@@ -124,4 +133,11 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontWeight: "bold",
     },
+    register:{
+        marginTop: 14,
+        alignSelf: 'center',
+    },
+    textRegister:{
+        color: '#a1a1a1',
+    }
 })
