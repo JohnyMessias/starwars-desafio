@@ -9,7 +9,7 @@ import PlanetDetails from "../../pages/PlanetDetails"
 import PlanetList from "../../pages/PlanetsList"
 import { propsNavigationStack } from "./Models"
 
-const {Navigator, Screen } = createNativeStackNavigator<propsNavigationStack>()
+const {Navigator, Screen } = createNativeStackNavigator()
 
 export default function() {
     return(
