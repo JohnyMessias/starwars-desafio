@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from "react-na
 import { useNavigation } from "@react-navigation/native"
 import { propsStack } from "../../routes/Stack/Models";
 import { ImageBackground } from "react-native";
-import Header from "../../Components/header/Header";
+import Header from "../../Components/Header";
 
 export default function Home() {
     const imageSW2 = { uri: "https://us.123rf.com/450wm/regioeligo/regioeligo1811/regioeligo181100004/115675483-vector-abstract-background-with-open-space-star-warp-or-hyperspace-travel-big-bang-illustration-.jpg?ver=6" };

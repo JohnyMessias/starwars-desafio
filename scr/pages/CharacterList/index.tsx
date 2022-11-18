@@ -3,8 +3,8 @@ import { View, Text, TouchableOpacity, Alert, StyleSheet, FlatList } from "react
 import { useNavigation } from "@react-navigation/native"
 import { propsStack } from "../../routes/Stack/Models";
 
-import Header from "../../Components/header/Header";
-import PeopleList from "../../Components/header/PeopleList";
+import Header from "../../Components/Header";
+import PeopleList from "../../Components/PeopleList";
 import axios from 'axios'
 
 

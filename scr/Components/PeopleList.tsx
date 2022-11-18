@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Image } from 'react-native'
-import PeopleListItem from '../PeopleListItem';
+import PeopleListItem from './PeopleListItem';
 
 const PeopleList = props => {
      const { peoples } = props;
