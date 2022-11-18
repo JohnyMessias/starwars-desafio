@@ -7,8 +7,6 @@ import Header from "../../Components/Header";
 import PeopleList from "../../Components/PeopleList";
 import axios from 'axios'
 
-
-
 export default class CharacterList extends React.Component {
     constructor(props) {
       super(props);
@@ -30,15 +28,13 @@ export default class CharacterList extends React.Component {
       })
     }
 
-
     render(){
-      return (
+      return ( 
         <View>
           <Header title="Personagens" />
           <PeopleList peoples={this.state.peoples} />
         </View>
-      )
-}
+      )}
 }
 
 const styles = StyleSheet.create({

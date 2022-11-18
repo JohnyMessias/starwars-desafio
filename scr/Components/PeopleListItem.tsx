@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image} from 'react-native'
-import capitalizeFirstLetter from '../util/capitalizeFirstLetter'
+import { capitalizeFirstLetter } from '../util'
 
 const PeopleListItem = props => {
      const { people } = props
