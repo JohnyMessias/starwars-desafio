@@ -24,7 +24,8 @@ export default function Routes() {
                component={CharacterDetails} />
             <Stack.Screen 
                name="CharacterList" 
-               component={CharacterList} />
+               component={CharacterList}
+               />
             <Stack.Screen 
                name="PlanetDetails" 
                component={PlanetDetails} />

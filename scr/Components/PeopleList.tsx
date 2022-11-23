@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import PeopleListItem from './PeopleListItem';
 
 const PeopleList = props => {
@@ -10,6 +10,7 @@ const PeopleList = props => {
       );
 
     return(
+        
         <View style={styles.container}>
             { items }
         </View>

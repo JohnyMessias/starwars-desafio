@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image} from 'react-native'
+import { Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import { capitalizeFirstLetter } from '../util'
 
 const PeopleListItem = props => {
      const { people } = props
      const { name, gender } = people
         return (
-            <View style={styles.line} key={name}>
+            <TouchableOpacity style={styles.line} key={name} onPress={() => console.log('Clicou em ', name)}>
                 <Image style={styles.iconList} source={require("../../assets/icon.png")} ></Image>
-                <View>
+                <View style={styles.contentText}>
                     <Text style={styles.lineText}> { `Nome: ${name} ` }</Text>
                     <Text style={styles.lineTextSec}> { `Genero: ${capitalizeFirstLetter(gender)}` }</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
 }
 
@@ -36,9 +36,12 @@ const styles = StyleSheet.create({
         marginStart: 10,
     },
     iconList:{
-        height: 40,
-        width: 40,
-        borderRadius: 100,
+        flex:1,
+        aspectRatio: 1,
+        borderRadius: 50,
+    },
+    contentText:{
+        flex:7,
     }
 })
 
