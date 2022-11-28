@@ -8,13 +8,13 @@ import PeopleList from "../../Components/PeopleList";
 import axios from 'axios'
 
 export default class CharacterList extends React.Component {
+  
     constructor(props) {
       super(props);
 
       this.state = {
         peoples: []
       };
-
     }
 
     componentDidMount(): void {
@@ -31,8 +31,8 @@ export default class CharacterList extends React.Component {
     render(){
       return ( 
         <View>
-          <Header title="Personagens" />
-          <PeopleList peoples={this.state.peoples} />
+          <PeopleList peoples={this.state.peoples}
+            onPress={ null } />
         </View>
       )}
 }
